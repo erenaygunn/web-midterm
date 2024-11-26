@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Course Details</title>
+		<link
+			rel="stylesheet"
+			href="index.css"
+		/>
+	</head>
+	<body>
+		<header>
+			<h1 id="courseName">Course Name</h1>
+			<button id="editCourseBtn">Edit Course</button>
+			<button id="deleteCourseBtn">Delete Course</button>
+		</header>
+		<main>
+			<section id="courseDetails">
+				<p id="courseDescription">Course Description</p>
+				<ul id="studentList">
+					<!-- Students will be rendered here -->
+				</ul>
+			</section>
+			<!-- Edit Modal -->
+			<div
+				id="editModal"
+				class="modal hidden"
+			>
+				<h2>Edit Course</h2>
+				<form id="editCourseForm">
+					<input
+						type="text"
+						id="editCourseName"
+						placeholder="Course Name"
+						required
+					/>
+					<textarea
+						id="editCourseDescription"
+						placeholder="Description"
+					></textarea>
+					<input
+						type="text"
+						id="editGradingScale"
+						placeholder="Grading Scale"
+					/>
+					<button type="submit">Save Changes</button>
+				</form>
+				<h3>Students</h3>
+				<ul id="editStudentList">
+					<!-- Editable student list will be rendered here -->
+				</ul>
+			</div>
+		</main>
+		<script src="course.js"></script>
+	</body>
+</html>

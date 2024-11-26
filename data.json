@@ -1,0 +1,36 @@
+{
+	"courses": [
+		{
+			"id": "course1",
+			"name": "Mathematics",
+			"description": "An introductory course to Mathematics.",
+			"gradingScale": "A-F",
+			"students": [
+				{ "id": "student1", "name": "John Doe", "grade": "A" },
+				{ "id": "student2", "name": "Jane Smith", "grade": "B" }
+			]
+		},
+		{
+			"id": "course2",
+			"name": "Physics",
+			"description": "Basics of Physics and its applications.",
+			"gradingScale": "A-F",
+			"students": []
+		}
+	],
+	"students": [
+		{
+			"id": "student1",
+			"name": "John Doe",
+			"grade": "A",
+			"courses": ["course1"]
+		},
+		{
+			"id": "student2",
+			"name": "Jane Smith",
+			"grade": "B",
+			"courses": ["course1"]
+		},
+		{ "id": "student3", "name": "Emily Davis", "grade": null, "courses": [] }
+	]
+}
