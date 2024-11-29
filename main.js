@@ -29,9 +29,7 @@ const renderCourses = () => {
 		courseCard.innerHTML = `
 		<h3>${course.name}</h3>
 		<p>${course.description}</p>
-		<ul>
-		  ${course.students.map((s) => `<li>${s.name} (${s.id})</li>`).join("")}
-		</ul>
+		<p>Total Students: ${course.students.length}</p>
 	  `;
 		coursesList.appendChild(courseCard);
 	});
@@ -48,7 +46,7 @@ const populateCourseSelect = () => {
 	});
 };
 
-const openModal = (modal) => modal.classList.remove("hidden");
+const openModal = (modal) => modal.classList.toggle("hidden");
 const closeModal = (modal) => modal.classList.add("hidden");
 
 // Event Listeners

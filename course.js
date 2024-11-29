@@ -45,7 +45,8 @@ const isPassed = (letterGrade) => {
 const renderCourseDetails = () => {
 	courseName.textContent = course.name;
 	courseDescription.textContent = course.description;
-	studentList.innerHTML = course.students
+	const studentTableBody = document.querySelector("#studentTable tbody");
+	studentTableBody.innerHTML = course.students
 		.map((s) => {
 			const grade = (s.midterm * 0.4 + s.final * 0.6).toFixed(2);
 			const letterGrade = calculateLetterGrade(
@@ -54,7 +55,16 @@ const renderCourseDetails = () => {
 				course.gradingScale
 			);
 			const status = isPassed(letterGrade) ? "Passed" : "Failed";
-			return `<li>${s.name} (${s.id}) - Midterm: ${s.midterm}, Final: ${s.final}, Grade: ${grade} (${letterGrade}) - ${status}</li>`;
+			return `
+				<tr>
+					<td>${s.name}</td>
+					<td>${s.id}</td>
+					<td>${s.midterm}</td>
+					<td>${s.final}</td>
+					<td>${grade} (${letterGrade})</td>
+					<td>${status}</td>
+				</tr>
+			`;
 		})
 		.join("");
 };
