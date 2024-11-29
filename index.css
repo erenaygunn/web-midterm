@@ -1,15 +1,156 @@
-/* Minimal styling */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	padding: 20px 10px;
+	background-color: #f1f0e8;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+}
+
+h1 {
+	text-align: center;
+	margin: 20px 0;
+	color: #89a8b2;
+}
+
+#landing {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
 .hidden {
-	display: none;
+	display: none !important;
 }
 .modal {
-	background: white;
-	border: 1px solid #ccc;
+	background: #b3c8cf;
+	padding: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	border-radius: 20px;
+	max-width: 600px;
+	width: 100%;
+	margin-bottom: 10px;
 }
-.course-card {
-	border: 1px solid #ddd;
+
+.modal input {
+	padding: 10px;
+	border-radius: 10px;
+	border: 1px solid #89a8b2;
+	background-color: #e5e1da;
+	max-width: 500px;
+}
+
+.modal #courseForm,
+.modal #studentForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	gap: 10px;
+}
+
+.modal input:focus {
+	outline: none;
+}
+
+.modal h2 {
+	margin-bottom: 20px;
+	color: #f1f0e8;
+}
+
+.buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	gap: 16px;
+	margin: 20px 0;
+}
+
+.modal button {
+	background-color: #e5e1da;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 12px;
+	color: black;
 	cursor: pointer;
+	transition: all 0.3s;
+	margin-top: 15px;
 }
-.course-card:hover {
-	background: #f5f5f5;
+
+.buttons button {
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	background-color: #b3c8cf;
+	color: black;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.buttons button:hover {
+	background-color: #e5e1da;
+}
+
+#searchBar {
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	border-radius: 10px;
+	border: 1px solid #89a8b2;
+	background-color: #e5e1da;
+	max-width: 500px;
+}
+
+#searchBar:focus {
+	outline: none;
+}
+
+#searchBar::placeholder {
+	color: #89a8b2;
+}
+
+/* Courses Styling */
+#coursesList a {
+	text-decoration: none;
+	color: #f1f0e8;
+}
+
+#coursesList {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	margin-top: 4rem;
+}
+
+.course-card {
+	background-color: #b3c8cf;
+	padding: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 8px;
+	border-radius: 20px;
+}
+
+.course-card span {
+	margin-top: 10px;
+	color: #89a8b2;
+	text-decoration: underline;
 }

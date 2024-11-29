@@ -24,80 +24,82 @@
 
 		<main>
 			<section id="landing">
-				<button id="addCourseBtn">Add Course</button>
-				<button id="addStudentBtn">Add Student</button>
+				<div class="buttons">
+					<button id="addCourseBtn">Add Course</button>
+					<button id="addStudentBtn">Add Student</button>
+				</div>
+
+				<!-- Modals -->
+				<div
+					id="courseModal"
+					class="modal hidden"
+				>
+					<h2>Add Course</h2>
+					<form id="courseForm">
+						<input
+							type="text"
+							id="courseName"
+							placeholder="Course Name"
+							required
+						/>
+						<input
+							type="text"
+							id="courseID"
+							placeholder="Course ID"
+							required
+						/>
+						<input
+							id="courseDescription"
+							placeholder="Description"
+						></input>
+						<input
+						type="text"
+						id="gradingScale"
+						placeholder="Grading Scale"
+						/>
+						<button type="submit">Save Course</button>
+					</form>
+				</div>
+
+				<div
+					id="studentModal"
+					class="modal hidden"
+				>
+					<h2>Add Student</h2>
+					<form id="studentForm">
+						<input
+							type="text"
+							id="studentName"
+							placeholder="Student Name"
+							required
+						/>
+						<input
+							type="text"
+							id="studentID"
+							placeholder="Student ID"
+							required
+						/>
+						<input
+							type="number"
+							id="studentMidterm"
+							placeholder="Midterm"
+						/>
+						<input
+							type="number"
+							id="studentFinal"
+							placeholder="Final"
+						/>
+						<select id="courseSelect">
+							<option value="">No Course</option>
+						</select>
+						<button type="submit">Save Student</button>
+					</form>
+				</div>
 
 				<div id="coursesList">
 					<!-- Courses will be rendered here -->
 				</div>
 			</section>
-
-			<!-- Modals -->
-			<div
-				id="courseModal"
-				class="modal hidden"
-			>
-				<h2>Add/Edit Course</h2>
-				<form id="courseForm">
-					<input
-						type="text"
-						id="courseName"
-						placeholder="Course Name"
-						required
-					/>
-					<input
-						type="text"
-						id="courseID"
-						placeholder="Course ID"
-						required
-					/>
-					<textarea
-						id="courseDescription"
-						placeholder="Description"
-					></textarea>
-					<input
-						type="text"
-						id="gradingScale"
-						placeholder="Grading Scale"
-					/>
-					<button type="submit">Save Course</button>
-				</form>
-			</div>
-
-			<div
-				id="studentModal"
-				class="modal hidden"
-			>
-				<h2>Add/Edit Student</h2>
-				<form id="studentForm">
-					<input
-						type="text"
-						id="studentName"
-						placeholder="Student Name"
-						required
-					/>
-					<input
-						type="text"
-						id="studentID"
-						placeholder="Student ID"
-						required
-					/>
-					<input
-						type="number"
-						id="studentMidterm"
-						placeholder="Midterm"
-					/>
-					<input
-						type="number"
-						id="studentFinal"
-						placeholder="Final"
-					/>
-					<select id="courseSelect">
-						<option value="">No Course</option>
-					</select>
-					<button type="submit">Save Student</button>
-				</form>
-			</div>
 		</main>
 
 		<script src="main.js"></script>

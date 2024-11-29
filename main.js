@@ -28,8 +28,8 @@ const renderCourses = () => {
 		courseCard.href = `course.html?id=${course.id}`;
 		courseCard.innerHTML = `
 		<h3>${course.name}</h3>
-		<p>${course.description}</p>
 		<p>Total Students: ${course.students.length}</p>
+		<span>View details</span>
 	  `;
 		coursesList.appendChild(courseCard);
 	});
