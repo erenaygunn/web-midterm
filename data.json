@@ -1,36 +1,295 @@
 {
 	"courses": [
 		{
-			"id": "course1",
-			"name": "Mathematics",
-			"description": "An introductory course to Mathematics.",
-			"gradingScale": "A-F",
+			"id": "1",
+			"name": "Biology 101",
+			"description": "Introduction to cellular biology and genetics",
+			"gradingScale": "7",
 			"students": [
-				{ "id": "student1", "name": "John Doe", "grade": "A" },
-				{ "id": "student2", "name": "Jane Smith", "grade": "B" }
+				{
+					"id": "1",
+					"name": "Zeynep Kaya",
+					"midterm": 78,
+					"final": 85,
+					"courses": ["1", "2", "3"]
+				},
+				{
+					"id": "2",
+					"name": "Ahmet Yılmaz",
+					"midterm": 64,
+					"final": 70
+				}
 			]
 		},
 		{
-			"id": "course2",
-			"name": "Physics",
-			"description": "Basics of Physics and its applications.",
-			"gradingScale": "A-F",
-			"students": []
+			"id": "2",
+			"name": "Chemistry 202",
+			"description": "Organic chemistry and lab techniques",
+			"gradingScale": "10",
+			"students": [
+				{
+					"id": "3",
+					"name": "Selin Çelik",
+					"midterm": 92,
+					"final": 88
+				},
+				{
+					"id": "1",
+					"name": "Zeynep Kaya",
+					"midterm": 84,
+					"final": 91
+				},
+				{
+					"id": "4",
+					"name": "Mert Demir",
+					"midterm": 78,
+					"final": 83
+				}
+			]
+		},
+		{
+			"id": "3",
+			"name": "Programming Basics",
+			"description": "Introduction to Python and problem-solving techniques",
+			"gradingScale": "7",
+			"students": [
+				{
+					"id": "5",
+					"name": "Seda Arslan",
+					"midterm": 65,
+					"final": 72
+				},
+				{
+					"id": "6",
+					"name": "Ali Can",
+					"midterm": 85,
+					"final": 90
+				},
+				{
+					"id": "3",
+					"name": "Selin Çelik",
+					"midterm": 92,
+					"final": 91
+				}
+			]
+		},
+		{
+			"id": "4",
+			"name": "Advanced Algorithms",
+			"description": "Data structures and algorithm design",
+			"gradingScale": "10",
+			"students": [
+				{
+					"id": "7",
+					"name": "Kaan Güler",
+					"midterm": 94,
+					"final": 97
+				},
+				{
+					"id": "2",
+					"name": "Ahmet Yılmaz",
+					"midterm": 88,
+					"final": 92
+				}
+			]
+		},
+		{
+			"id": "5",
+			"name": "Physics 101",
+			"description": "Classical mechanics and thermodynamics",
+			"gradingScale": "7",
+			"students": [
+				{
+					"id": "8",
+					"name": "Emre Yıldız",
+					"midterm": 75,
+					"final": 80
+				},
+				{
+					"id": "9",
+					"name": "Yusuf Kılıç",
+					"midterm": 60,
+					"final": 70
+				},
+				{
+					"id": "1",
+					"name": "Zeynep Kaya",
+					"midterm": 85,
+					"final": 87
+				}
+			]
+		},
+		{
+			"id": "6",
+			"name": "Economics 101",
+			"description": "Basic principles of microeconomics",
+			"gradingScale": "10",
+			"students": [
+				{
+					"id": "10",
+					"name": "Berkay Çetin",
+					"midterm": 65,
+					"final": 73
+				},
+				{
+					"id": "7",
+					"name": "Kaan Güler",
+					"midterm": 70,
+					"final": 77
+				}
+			]
+		},
+		{
+			"id": "7",
+			"name": "Data Structures",
+			"description": "Building efficient data storage structures",
+			"gradingScale": "7",
+			"students": [
+				{
+					"id": "11",
+					"name": "Murat Özkan",
+					"midterm": 79,
+					"final": 84
+				},
+				{
+					"id": "12",
+					"name": "Seda Arslan",
+					"midterm": 87,
+					"final": 92
+				}
+			]
+		},
+		{
+			"id": "8",
+			"name": "Machine Learning",
+			"description": "Introductory course on machine learning algorithms",
+			"gradingScale": "10",
+			"students": [
+				{
+					"id": "6",
+					"name": "Ali Can",
+					"midterm": 90,
+					"final": 95
+				},
+				{
+					"id": "13",
+					"name": "Merve Yıldırım",
+					"midterm": 82,
+					"final": 88
+				}
+			]
+		},
+		{
+			"id": "9",
+			"name": "Web Development",
+			"description": "HTML, CSS, and JavaScript programming for web apps",
+			"gradingScale": "7",
+			"students": [
+				{
+					"id": "14",
+					"name": "Deniz Aydın",
+					"midterm": 80,
+					"final": 85
+				},
+				{
+					"id": "15",
+					"name": "Emre Yıldız",
+					"midterm": 76,
+					"final": 78
+				}
+			]
+		},
+		{
+			"id": "10",
+			"name": "Artificial Intelligence",
+			"description": "Theory and practical applications of AI techniques",
+			"gradingScale": "10",
+			"students": [
+				{
+					"id": "15",
+					"name": "Emre Yıldız",
+					"midterm": 90,
+					"final": 95
+				},
+				{
+					"id": "12",
+					"name": "Seda Arslan",
+					"midterm": 84,
+					"final": 88
+				}
+			]
 		}
 	],
 	"students": [
 		{
-			"id": "student1",
-			"name": "John Doe",
-			"grade": "A",
-			"courses": ["course1"]
+			"id": "1",
+			"name": "Zeynep Kaya",
+			"midterm": 78,
+			"final": 85,
+			"courses": ["1", "2", "3", "5"]
 		},
 		{
-			"id": "student2",
-			"name": "Jane Smith",
-			"grade": "B",
-			"courses": ["course1"]
+			"id": "2",
+			"name": "Ahmet Yılmaz",
+			"midterm": 64,
+			"final": 70,
+			"courses": ["1", "3", "4"]
 		},
-		{ "id": "student3", "name": "Emily Davis", "grade": null, "courses": [] }
+		{
+			"id": "3",
+			"name": "Selin Çelik",
+			"midterm": 92,
+			"final": 91,
+			"courses": ["2", "3"]
+		},
+		{
+			"id": "4",
+			"name": "Mert Demir",
+			"midterm": 78,
+			"final": 83,
+			"courses": ["2"]
+		},
+		{
+			"id": "5",
+			"name": "Seda Arslan",
+			"midterm": 65,
+			"final": 72,
+			"courses": ["3", "7", "10"]
+		},
+		{
+			"id": "6",
+			"name": "Ali Can",
+			"midterm": 85,
+			"final": 90,
+			"courses": ["3", "6", "8"]
+		},
+		{
+			"id": "7",
+			"name": "Kaan Güler",
+			"midterm": 94,
+			"final": 97,
+			"courses": ["4", "6"]
+		},
+		{
+			"id": "8",
+			"name": "Emre Yıldız",
+			"midterm": 75,
+			"final": 80,
+			"courses": ["5", "9"]
+		},
+		{
+			"id": "9",
+			"name": "Yusuf Kılıç",
+			"midterm": 60,
+			"final": 70,
+			"courses": ["5"]
+		},
+		{
+			"id": "10",
+			"name": "Berkay Çetin",
+			"midterm": 65,
+			"final": 73,
+			"courses": ["6"]
+		}
 	]
 }
