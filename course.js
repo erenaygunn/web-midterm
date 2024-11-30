@@ -14,6 +14,7 @@ const editCourseDescription = document.getElementById("editCourseDescription");
 const editGradingScale = document.getElementById("editGradingScale");
 const editStudentList = document.getElementById("editStudentList");
 const deleteCourseBtn = document.getElementById("deleteCourseBtn");
+const courseIdElement = document.getElementById("courseId");
 
 const saveData = () => {
 	localStorage.setItem("data", JSON.stringify(data));
@@ -43,6 +44,7 @@ const isPassed = (letterGrade) => {
 };
 
 const renderCourseDetails = () => {
+	courseIdElement.textContent = course.id;
 	courseName.textContent = course.name;
 	courseDescription.textContent = course.description;
 	const studentTableBody = document.querySelector("#studentTable tbody");

@@ -309,3 +309,15 @@ h1 {
 	margin-bottom: 10px;
 	color: black;
 }
+
+.course-id {
+	font-weight: bold;
+	color: #89a8b2;
+	margin-bottom: 10px;
+}
+
+#courseId {
+	font-weight: bold;
+	color: #89a8b2;
+	margin-bottom: 10px;
+}

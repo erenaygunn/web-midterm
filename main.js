@@ -27,6 +27,7 @@ const renderCourses = (filteredCourses = data.courses) => {
 		courseCard.className = "course-card";
 		courseCard.href = `course.html?id=${course.id}`;
 		courseCard.innerHTML = `
+		<p class="course-id">${course.id}</p>
 		<h3>${course.name}</h3>
 		<p>Total Students: ${course.students.length}</p>
 		<span>View details</span>
@@ -75,11 +76,23 @@ addStudentBtn.addEventListener("click", () => {
 
 courseForm.addEventListener("submit", (e) => {
 	e.preventDefault();
+	const courseID = document.getElementById("courseID").value;
+	const courseName = document.getElementById("courseName").value;
+	const courseDescription = document.getElementById("courseDescription").value;
+	const gradingScale = document.getElementById("gradingScale").value;
+
+	let course = data.courses.find((c) => c.id === courseID);
+
+	if (course) {
+		alert("A course with this ID already exists.");
+		return;
+	}
+
 	const newCourse = {
-		id: document.getElementById("courseID").value,
-		name: document.getElementById("courseName").value,
-		description: document.getElementById("courseDescription").value,
-		gradingScale: document.getElementById("gradingScale").value,
+		id: courseID,
+		name: courseName,
+		description: courseDescription,
+		gradingScale: gradingScale,
 		students: [],
 	};
 	data.courses.push(newCourse);
@@ -113,16 +126,19 @@ studentForm.addEventListener("submit", (e) => {
 
 	let student = data.students.find((s) => s.id === studentID);
 
-	if (!student) {
-		student = {
-			id: studentID,
-			name: studentName,
-			midterm: studentMidterm,
-			final: studentFinal,
-			courses: [],
-		};
-		data.students.push(student);
+	if (student) {
+		alert("A student with this ID already exists.");
+		return;
 	}
+
+	student = {
+		id: studentID,
+		name: studentName,
+		midterm: studentMidterm,
+		final: studentFinal,
+		courses: [],
+	};
+	data.students.push(student);
 
 	if (selectedCourse) {
 		const course = data.courses.find((c) => c.id === selectedCourse);
