@@ -321,3 +321,8 @@ h1 {
 	color: #89a8b2;
 	margin-bottom: 10px;
 }
+
+#studentMidterm,
+#studentFinal {
+	display: none;
+}

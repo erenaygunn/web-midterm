@@ -67,11 +67,25 @@ const populateCourseSelect = () => {
 const openModal = (modal) => modal.classList.toggle("hidden");
 const closeModal = (modal) => modal.classList.add("hidden");
 
+const toggleGradeInputs = (show) => {
+	const gradeInputs = document.querySelectorAll(
+		"#studentMidterm, #studentFinal"
+	);
+	gradeInputs.forEach((input) => {
+		input.style.display = show ? "block" : "none";
+	});
+};
+
 // Event Listeners
 addCourseBtn.addEventListener("click", () => openModal(courseModal));
 addStudentBtn.addEventListener("click", () => {
 	populateCourseSelect();
 	openModal(studentModal);
+	toggleGradeInputs(false);
+});
+
+courseSelect.addEventListener("change", (e) => {
+	toggleGradeInputs(e.target.value !== "");
 });
 
 courseForm.addEventListener("submit", (e) => {
@@ -105,10 +119,13 @@ studentForm.addEventListener("submit", (e) => {
 	e.preventDefault();
 	const studentID = document.getElementById("studentID").value;
 	const studentName = document.getElementById("studentName").value;
-	let studentMidterm = parseFloat(
-		document.getElementById("studentMidterm").value
-	);
-	let studentFinal = parseFloat(document.getElementById("studentFinal").value);
+	const selectedCourse = courseSelect.value;
+	const studentMidterm = selectedCourse
+		? parseFloat(document.getElementById("studentMidterm").value)
+		: null;
+	const studentFinal = selectedCourse
+		? parseFloat(document.getElementById("studentFinal").value)
+		: null;
 
 	if (studentMidterm < 0 || studentMidterm > 100 || isNaN(studentMidterm)) {
 		alert("Midterm grade must be between 0 and 100.");
@@ -121,8 +138,6 @@ studentForm.addEventListener("submit", (e) => {
 
 	studentMidterm = Math.min(100, Math.max(0, studentMidterm));
 	studentFinal = Math.min(100, Math.max(0, studentFinal));
-
-	const selectedCourse = courseSelect.value;
 
 	let student = data.students.find((s) => s.id === studentID);
 
