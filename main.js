@@ -4,6 +4,8 @@ let data = JSON.parse(localStorage.getItem("data")) || {
 	students: [],
 };
 
+console.log(data);
+
 // DOM Elements
 const searchBar = document.getElementById("searchBar");
 const coursesList = document.getElementById("coursesList");
