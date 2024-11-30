@@ -223,6 +223,11 @@ form {
 	color: #89a8b2;
 }
 
+.notes {
+	display: flex;
+	flex-direction: column;
+}
+
 .notes label {
 	color: black;
 	font-weight: 300;
