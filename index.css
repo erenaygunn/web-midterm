@@ -23,6 +23,14 @@ h1 {
 	color: #89a8b2;
 }
 
+form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+}
+
 #landing {
 	display: flex;
 	align-items: center;
@@ -40,7 +48,7 @@ h1 {
 	justify-content: center;
 	flex-direction: column;
 	border-radius: 20px;
-	max-width: 600px;
+	max-width: 800px;
 	width: 100%;
 	margin-bottom: 10px;
 }
@@ -186,7 +194,7 @@ h1 {
 }
 
 .course-modal {
-	max-width: none;
+	max-width: 800px;
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
@@ -285,9 +293,8 @@ h1 {
 
 #studentDetails {
 	background-color: #b3c8cf;
-	padding: 40px;
-	border-radius: 20px;
-	max-width: 600px;
+	padding: 10px;
+	max-width: 800px;
 	margin: 20px auto;
 	color: #f1f0e8;
 }
@@ -308,6 +315,10 @@ h1 {
 	border-radius: 10px;
 	margin-bottom: 10px;
 	color: black;
+}
+
+#courseDetails {
+	max-width: 800px;
 }
 
 .course-id {
@@ -361,4 +372,58 @@ h1 {
 	font-weight: bold;
 	color: #89a8b2;
 	font-size: 1.2em;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+}
+
+th,
+td {
+	padding: 6px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+th {
+	background-color: #89a8b2;
+	color: #f1f0e8;
+}
+
+td {
+	background-color: #b3c8cf;
+	color: #f1f0e8;
+}
+
+table tbody {
+	display: block;
+	max-height: 300px;
+	overflow-y: auto;
+}
+
+table thead,
+table tbody tr {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+	width: 30%;
+}
+
+th:nth-child(2),
+td:nth-child(2),
+th:nth-child(3),
+td:nth-child(3),
+th:nth-child(4),
+td:nth-child(4),
+th:nth-child(5),
+td:nth-child(5),
+th:nth-child(6),
+td:nth-child(6) {
+	width: 14%;
 }
