@@ -120,10 +120,10 @@ studentForm.addEventListener("submit", (e) => {
 	const studentID = document.getElementById("studentID").value;
 	const studentName = document.getElementById("studentName").value;
 	const selectedCourse = courseSelect.value;
-	const studentMidterm = selectedCourse
+	let studentMidterm = selectedCourse
 		? parseFloat(document.getElementById("studentMidterm").value)
 		: null;
-	const studentFinal = selectedCourse
+	let studentFinal = selectedCourse
 		? parseFloat(document.getElementById("studentFinal").value)
 		: null;
 
