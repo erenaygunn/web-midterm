@@ -20,9 +20,9 @@ const saveData = () => {
 	localStorage.setItem("data", JSON.stringify(data));
 };
 
-const renderCourses = () => {
+const renderCourses = (filteredCourses = data.courses) => {
 	coursesList.innerHTML = "";
-	data.courses.forEach((course) => {
+	filteredCourses.forEach((course) => {
 		const courseCard = document.createElement("a");
 		courseCard.className = "course-card";
 		courseCard.href = `course.html?id=${course.id}`;
@@ -32,6 +32,23 @@ const renderCourses = () => {
 		<span>View details</span>
 	  `;
 		coursesList.appendChild(courseCard);
+	});
+	saveData();
+};
+
+const renderStudents = (filteredStudents = data.students) => {
+	const studentsList = document.getElementById("studentsList");
+	studentsList.innerHTML = "";
+	filteredStudents.forEach((student) => {
+		const studentCard = document.createElement("a");
+		studentCard.className = "student-card";
+		studentCard.href = `student.html?id=${student.id}`;
+		studentCard.innerHTML = `
+		<h3>${student.name}</h3>
+		<p>ID: ${student.id}</p>
+		<span>View Profile</span>
+	  `;
+		studentsList.appendChild(studentCard);
 	});
 	saveData();
 };
@@ -113,5 +130,18 @@ studentForm.addEventListener("submit", (e) => {
 	saveData();
 });
 
+searchBar.addEventListener("input", (e) => {
+	const query = e.target.value.toLowerCase();
+	const filteredCourses = data.courses.filter((course) =>
+		course.name.toLowerCase().includes(query)
+	);
+	const filteredStudents = data.students.filter((student) =>
+		student.name.toLowerCase().includes(query)
+	);
+	renderCourses(filteredCourses);
+	renderStudents(filteredStudents);
+});
+
 // Initialize
 renderCourses();
+renderStudents();

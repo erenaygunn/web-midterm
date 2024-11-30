@@ -45,32 +45,61 @@ h1 {
 	margin-bottom: 10px;
 }
 
-.modal input {
+.modal input,
+.modal select {
 	padding: 10px;
 	border-radius: 10px;
 	border: 1px solid #89a8b2;
 	background-color: #e5e1da;
 	max-width: 500px;
 	width: 100%;
+	margin-bottom: 10px;
 }
 
-.modal #courseForm,
-.modal #studentForm {
-	display: flex;
-	flex-direction: column;
-	align-items: start;
-	justify-content: center;
-	width: 100%;
-	gap: 10px;
-}
-
-.modal input:focus {
+.modal input:focus,
+.modal select:focus {
 	outline: none;
 }
 
 .modal h2 {
 	margin-bottom: 20px;
 	color: #f1f0e8;
+}
+
+.modal ul {
+	list-style-type: none;
+	padding: 0;
+	width: 100%;
+}
+
+.modal ul li {
+	background-color: #e5e1da;
+	padding: 10px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	color: black;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.modal ul li input {
+	margin-left: 10px;
+	max-width: 100px;
+}
+
+.modal ul li button {
+	background-color: #b3c8cf;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 5px;
+	color: black;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.modal ul li button:hover {
+	background-color: #e5e1da;
 }
 
 .buttons {
@@ -171,4 +200,58 @@ h1 {
 	margin-top: 10px;
 	color: #89a8b2;
 	text-decoration: underline;
+}
+
+.student-card {
+	background-color: #b3c8cf;
+	padding: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 8px;
+	border-radius: 20px;
+	text-decoration: none;
+	color: #f1f0e8;
+}
+
+.student-card span {
+	margin-top: 10px;
+	color: #89a8b2;
+	text-decoration: underline;
+}
+
+#studentsList {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	margin-top: 4rem;
+}
+
+#studentDetails {
+	background-color: #b3c8cf;
+	padding: 40px;
+	border-radius: 20px;
+	max-width: 600px;
+	margin: 20px auto;
+	color: #f1f0e8;
+}
+
+#studentDetails h3 {
+	margin-top: 20px;
+	color: #f1f0e8;
+}
+
+#studentDetails ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+#studentDetails ul li {
+	background-color: #e5e1da;
+	padding: 10px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	color: black;
 }

@@ -57,7 +57,7 @@ const renderCourseDetails = () => {
 			const status = isPassed(letterGrade) ? "Passed" : "Failed";
 			return `
 				<tr>
-					<td>${s.name}</td>
+					 <td><a href="student.html?id=${s.id}">${s.name}</a></td>
 					<td>${s.id}</td>
 					<td>${s.midterm}</td>
 					<td>${s.final}</td>
