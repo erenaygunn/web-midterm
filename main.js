@@ -192,6 +192,19 @@ document.getElementById("goBackBtn").addEventListener("click", () => {
 	window.history.back();
 });
 
+document.getElementById("fetchDataBtn").addEventListener("click", async () => {
+	try {
+		const response = await fetch("data.json");
+		const jsonData = await response.json();
+		localStorage.setItem("data", JSON.stringify(jsonData));
+		alert("Data fetched and saved to local storage.");
+		location.reload();
+	} catch (error) {
+		console.error("Error fetching data:", error);
+		alert("Failed to fetch data.");
+	}
+});
+
 // Initialize
 renderCourses();
 renderStudents();
