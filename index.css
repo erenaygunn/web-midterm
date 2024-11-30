@@ -45,6 +45,11 @@ h1 {
 	margin-bottom: 10px;
 }
 
+.modal label {
+	color: #f1f0e8;
+	font-weight: 600;
+}
+
 .modal input,
 .modal select {
 	padding: 10px;
@@ -73,7 +78,7 @@ h1 {
 }
 
 .modal ul li {
-	background-color: #e5e1da;
+	background-color: #f1f0e8;
 	padding: 10px;
 	border-radius: 10px;
 	margin-bottom: 10px;
@@ -81,11 +86,6 @@ h1 {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-}
-
-.modal ul li input {
-	margin-left: 10px;
-	max-width: 100px;
 }
 
 .modal ul li button {
@@ -96,6 +96,7 @@ h1 {
 	color: black;
 	cursor: pointer;
 	transition: all 0.3s;
+	margin-top: 0;
 }
 
 .modal ul li button:hover {
@@ -184,6 +185,21 @@ h1 {
 	gap: 20px;
 }
 
+.course-modal {
+	max-width: none;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.course-modal #editCourseForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: start;
+	width: 100%;
+}
+
 .courses,
 .students {
 	display: flex;
@@ -197,6 +213,31 @@ h1 {
 .courses h2,
 .students h2 {
 	color: #89a8b2;
+}
+
+.notes label {
+	color: black;
+	font-weight: 300;
+	font-size: 14px;
+}
+
+.course-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 20px;
+	border-radius: 20px;
+}
+
+#editStudentList li {
+	overflow-y: auto;
+	display: flex;
+	gap: 20px;
+}
+
+#editStudentList li input {
+	width: auto;
 }
 
 .course-card {

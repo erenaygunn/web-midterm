@@ -84,9 +84,15 @@ const renderEditModal = () => {
 			const status = isPassed(letterGrade) ? "Passed" : "Failed";
 			return `
 				<li>
-					${s.name} (${s.id})
-					<input type="number" value="${s.midterm}" placeholder="Midterm" data-id="${s.id}" data-type="midterm" min="0" max="100" />
-					<input type="number" value="${s.final}" placeholder="Final" data-id="${s.id}" data-type="final" min="0" max="100" />
+					${s.name} ID:${s.id}
+					<div class="notes">
+					<label for="midterm-${s.id}">Midterm</label>
+					<input type="number" id="midterm-${s.id}" value="${s.midterm}" placeholder="Midterm" data-id="${s.id}" data-type="midterm" min="0" max="100" />
+					</div>
+					<div class="notes">
+					<label for="final-${s.id}">Final</label>
+					<input type="number" id="final-${s.id}" value="${s.final}" placeholder="Final" data-id="${s.id}" data-type="final" min="0" max="100" />
+					</div>
 					<span>(${grade} - ${letterGrade}) - ${status}</span>
 					<button class="delete-student" data-id="${s.id}">Delete</button>
 				</li>

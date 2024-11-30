@@ -15,35 +15,39 @@
 	<body>
 		<header>
 			<h1 id="courseName">Course Name</h1>
-			<button id="editCourseBtn">Edit Course</button>
-			<button id="deleteCourseBtn">Delete Course</button>
+			<div class="buttons">
+				<button id="editCourseBtn">Edit Course</button>
+				<button id="deleteCourseBtn">Delete Course</button>
+			</div>
 		</header>
-		<main>
+		<main class="course-container">
 			
 			<!-- Edit Modal -->
 			<div
 				id="editModal"
-				class="modal hidden"
+				class="modal hidden course-modal"
 			>
 				<h2>Edit Course</h2>
 				<form id="editCourseForm">
+					<label for="editCourseName">Course Name</label>
 					<input
 						type="text"
 						id="editCourseName"
 						placeholder="Course Name"
 						required
 					/>
+					<label for="editCourseDescription">Description</label>
 					<input
 						id="editCourseDescription"
 						placeholder="Description"
 					></input>
+					<label for="editGradingScale">Grading Scale</label>
 					<select id="editGradingScale">
 						<option value="7">7</option>
 						<option value="10">10</option>
 					</select>
 					<button type="submit">Save Changes</button>
 				</form>
-				<h3>Students</h3>
 				<ul id="editStudentList">
 					<!-- Editable student list will be rendered here -->
 				</ul>
