@@ -122,8 +122,8 @@ document
 		const toggleBtn = document.getElementById("toggleCourseStatsBtn");
 		courseStats.classList.toggle("hidden");
 		toggleBtn.textContent = courseStats.classList.contains("hidden")
-			? "Show Course Stats"
-			: "Hide Course Stats";
+			? "Show Course Details"
+			: "Hide Course Details";
 	});
 
 document.getElementById("goBackBtn").addEventListener("click", () => {
