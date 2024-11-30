@@ -141,24 +141,24 @@ studentForm.addEventListener("submit", (e) => {
 
 	let student = data.students.find((s) => s.id === studentID);
 
-	if (student) {
-		alert("A student with this ID already exists.");
-		return;
+	if (!student) {
+		student = {
+			id: studentID,
+			name: studentName,
+			courses: [],
+		};
+		data.students.push(student);
 	}
-
-	student = {
-		id: studentID,
-		name: studentName,
-		midterm: studentMidterm,
-		final: studentFinal,
-		courses: [],
-	};
-	data.students.push(student);
 
 	if (selectedCourse) {
 		const course = data.courses.find((c) => c.id === selectedCourse);
 		if (!course.students.some((s) => s.id === studentID)) {
-			course.students.push(student);
+			course.students.push({
+				id: studentID,
+				name: studentName,
+				midterm: studentMidterm,
+				final: studentFinal,
+			});
 		}
 		if (!student.courses.includes(course.id)) {
 			student.courses.push(course.id);
