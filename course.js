@@ -43,12 +43,23 @@ const isPassed = (letterGrade) => {
 	return letterGrade !== "F";
 };
 
-const renderCourseDetails = () => {
+const renderCourseDetails = (filter = "all") => {
 	courseIdElement.textContent = course.id;
 	courseName.textContent = course.name;
 	courseDescription.textContent = course.description;
 	const studentTableBody = document.querySelector("#studentTable tbody");
 	studentTableBody.innerHTML = course.students
+		.filter((s) => {
+			const letterGrade = calculateLetterGrade(
+				s.midterm,
+				s.final,
+				course.gradingScale
+			);
+			const status = isPassed(letterGrade) ? "Passed" : "Failed";
+			if (filter === "passed") return status === "Passed";
+			if (filter === "failed") return status === "Failed";
+			return true;
+		})
 		.map((s) => {
 			const grade = (s.midterm * 0.4 + s.final * 0.6).toFixed(2);
 			const letterGrade = calculateLetterGrade(
@@ -59,7 +70,7 @@ const renderCourseDetails = () => {
 			const status = isPassed(letterGrade) ? "Passed" : "Failed";
 			return `
 				<tr>
-					 <td><a href="student.html?id=${s.id}">${s.name}</a></td>
+					<td><a href="student.html?id=${s.id}">${s.name}</a></td>
 					<td>${s.id}</td>
 					<td>${s.midterm}</td>
 					<td>${s.final}</td>
@@ -70,6 +81,18 @@ const renderCourseDetails = () => {
 		})
 		.join("");
 };
+
+document.getElementById("filterPassedBtn").addEventListener("click", () => {
+	renderCourseDetails("passed");
+});
+
+document.getElementById("filterFailedBtn").addEventListener("click", () => {
+	renderCourseDetails("failed");
+});
+
+document.getElementById("showAllBtn").addEventListener("click", () => {
+	renderCourseDetails("all");
+});
 
 const renderEditModal = () => {
 	editCourseName.value = course.name;
