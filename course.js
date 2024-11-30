@@ -120,7 +120,8 @@ editStudentList.addEventListener("click", (e) => {
 	if (e.target.classList.contains("delete-student")) {
 		const studentId = e.target.dataset.id;
 		course.students = course.students.filter((s) => s.id !== studentId);
-		data.students = data.students.filter((s) => s.id !== studentId);
+		const studentData = data.students.find((s) => s.id === studentId);
+		studentData.courses = studentData.courses.filter((id) => id !== courseId);
 		saveData();
 		renderEditModal();
 		renderCourseDetails();
