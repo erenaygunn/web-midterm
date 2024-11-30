@@ -111,20 +111,29 @@ studentForm.addEventListener("submit", (e) => {
 
 	const selectedCourse = courseSelect.value;
 
-	const newStudent = {
-		id: studentID,
-		name: studentName,
-		midterm: studentMidterm,
-		final: studentFinal,
-		courses: [],
-	};
+	let student = data.students.find((s) => s.id === studentID);
+
+	if (!student) {
+		student = {
+			id: studentID,
+			name: studentName,
+			midterm: studentMidterm,
+			final: studentFinal,
+			courses: [],
+		};
+		data.students.push(student);
+	}
 
 	if (selectedCourse) {
 		const course = data.courses.find((c) => c.id === selectedCourse);
-		course.students.push(newStudent);
-		newStudent.courses.push(course.id);
+		if (!course.students.some((s) => s.id === studentID)) {
+			course.students.push(student);
+		}
+		if (!student.courses.includes(course.id)) {
+			student.courses.push(course.id);
+		}
 	}
-	data.students.push(newStudent);
+
 	renderCourses();
 	closeModal(studentModal);
 	saveData();
