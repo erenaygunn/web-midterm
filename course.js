@@ -48,18 +48,18 @@ const renderCourseDetails = (filter = "all") => {
 	courseName.textContent = course.name;
 	courseDescription.textContent = course.description;
 	const studentTableBody = document.querySelector("#studentTable tbody");
-	studentTableBody.innerHTML = course.students
-		.filter((s) => {
-			const letterGrade = calculateLetterGrade(
-				s.midterm,
-				s.final,
-				course.gradingScale
-			);
-			const status = isPassed(letterGrade) ? "Passed" : "Failed";
-			if (filter === "passed") return status === "Passed";
-			if (filter === "failed") return status === "Failed";
-			return true;
-		})
+	const filteredStudents = course.students.filter((s) => {
+		const letterGrade = calculateLetterGrade(
+			s.midterm,
+			s.final,
+			course.gradingScale
+		);
+		const status = isPassed(letterGrade) ? "Passed" : "Failed";
+		if (filter === "passed") return status === "Passed";
+		if (filter === "failed") return status === "Failed";
+		return true;
+	});
+	studentTableBody.innerHTML = filteredStudents
 		.map((s) => {
 			const grade = (s.midterm * 0.4 + s.final * 0.6).toFixed(2);
 			const letterGrade = calculateLetterGrade(
@@ -80,6 +80,27 @@ const renderCourseDetails = (filter = "all") => {
 			`;
 		})
 		.join("");
+
+	const totalStudents = course.students.length;
+	const passedStudents = course.students.filter((s) => {
+		const letterGrade = calculateLetterGrade(
+			s.midterm,
+			s.final,
+			course.gradingScale
+		);
+		return isPassed(letterGrade);
+	}).length;
+	const failedStudents = totalStudents - passedStudents;
+	const meanScore =
+		course.students.reduce((acc, s) => {
+			const grade = s.midterm * 0.4 + s.final * 0.6;
+			return acc + grade;
+		}, 0) / totalStudents;
+
+	document.getElementById("totalStudents").textContent = totalStudents;
+	document.getElementById("passedStudents").textContent = passedStudents;
+	document.getElementById("failedStudents").textContent = failedStudents;
+	document.getElementById("meanScore").textContent = meanScore.toFixed(2);
 };
 
 document.getElementById("filterPassedBtn").addEventListener("click", () => {
@@ -93,6 +114,17 @@ document.getElementById("filterFailedBtn").addEventListener("click", () => {
 document.getElementById("showAllBtn").addEventListener("click", () => {
 	renderCourseDetails("all");
 });
+
+document
+	.getElementById("toggleCourseStatsBtn")
+	.addEventListener("click", () => {
+		const courseStats = document.getElementById("courseStats");
+		const toggleBtn = document.getElementById("toggleCourseStatsBtn");
+		courseStats.classList.toggle("hidden");
+		toggleBtn.textContent = courseStats.classList.contains("hidden")
+			? "Show Course Stats"
+			: "Hide Course Stats";
+	});
 
 const renderEditModal = () => {
 	editCourseName.value = course.name;

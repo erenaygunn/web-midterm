@@ -297,7 +297,7 @@ form {
 }
 
 #studentDetails {
-	background-color: #b3c8cf;
+	background-color: #b3c8b;
 	padding: 10px;
 	max-width: 800px;
 	margin: 20px auto;
@@ -324,6 +324,9 @@ form {
 
 #courseDetails {
 	max-width: 800px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .course-id {
@@ -431,4 +434,31 @@ td:nth-child(5),
 th:nth-child(6),
 td:nth-child(6) {
 	width: 14%;
+}
+
+#courseStats {
+	border-radius: 10px;
+	margin-bottom: 20px;
+	text-align: center;
+	color: #000;
+}
+
+#courseStats p {
+	margin: 10px 0;
+	font-weight: bold;
+}
+
+#toggleCourseStatsBtn {
+	background-color: #89a8b2;
+	color: #f1f0e8;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	margin-bottom: 20px;
+}
+
+#toggleCourseStatsBtn:hover {
+	background-color: #6f8a9b;
 }
