@@ -51,13 +51,14 @@ h1 {
 	border: 1px solid #89a8b2;
 	background-color: #e5e1da;
 	max-width: 500px;
+	width: 100%;
 }
 
 .modal #courseForm,
 .modal #studentForm {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: start;
 	justify-content: center;
 	width: 100%;
 	gap: 10px;
@@ -82,7 +83,7 @@ h1 {
 }
 
 .modal button {
-	background-color: #e5e1da;
+	background-color: #f1f0e8;
 	padding: 10px 20px;
 	border: none;
 	border-radius: 12px;
@@ -90,6 +91,23 @@ h1 {
 	cursor: pointer;
 	transition: all 0.3s;
 	margin-top: 15px;
+	align-self: center;
+}
+
+.modal button:hover {
+	background-color: #e5e1da;
+}
+
+.modal select {
+	padding: 10px;
+	border-radius: 10px;
+	border: 1px solid #89a8b2;
+	background-color: #e5e1da;
+	max-width: 500px;
+}
+
+.modal select:focus {
+	outline: none;
 }
 
 .buttons button {
@@ -111,7 +129,7 @@ h1 {
 	padding: 10px;
 	margin: 10px 0;
 	border-radius: 10px;
-	border: 1px solid #89a8b2;
+	border: 1px solid #b3c8cf;
 	background-color: #e5e1da;
 	max-width: 500px;
 }
@@ -121,7 +139,7 @@ h1 {
 }
 
 #searchBar::placeholder {
-	color: #89a8b2;
+	color: #b3c8cf;
 }
 
 /* Courses Styling */
