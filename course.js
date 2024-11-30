@@ -97,7 +97,7 @@ const renderEditModal = () => {
 
 editCourseBtn.addEventListener("click", () => {
 	renderEditModal();
-	editModal.classList.remove("hidden");
+	editModal.classList.toggle("hidden");
 });
 
 editCourseForm.addEventListener("submit", (e) => {
