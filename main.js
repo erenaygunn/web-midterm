@@ -132,11 +132,15 @@ studentForm.addEventListener("submit", (e) => {
 
 searchBar.addEventListener("input", (e) => {
 	const query = e.target.value.toLowerCase();
-	const filteredCourses = data.courses.filter((course) =>
-		course.name.toLowerCase().includes(query)
+	const filteredCourses = data.courses.filter(
+		(course) =>
+			course.name.toLowerCase().includes(query) ||
+			course.id.toLowerCase().includes(query)
 	);
-	const filteredStudents = data.students.filter((student) =>
-		student.name.toLowerCase().includes(query)
+	const filteredStudents = data.students.filter(
+		(student) =>
+			student.name.toLowerCase().includes(query) ||
+			student.id.toLowerCase().includes(query)
 	);
 	renderCourses(filteredCourses);
 	renderStudents(filteredStudents);
