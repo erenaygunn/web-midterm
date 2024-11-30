@@ -25,7 +25,8 @@ const renderStudentProfile = () => {
 	studentCourses.innerHTML = student.courses
 		.map((courseId) => {
 			const course = data.courses.find((c) => c.id === courseId);
-			return `<li>${course.name}</li>`;
+			const studentCourse = course.students.find((s) => s.id === student.id);
+			return `<li>${course.name} - Midterm: ${studentCourse.midterm}, Final: ${studentCourse.final}</li>`;
 		})
 		.join("");
 };
