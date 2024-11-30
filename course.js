@@ -126,6 +126,10 @@ document
 			: "Hide Course Stats";
 	});
 
+document.getElementById("goBackBtn").addEventListener("click", () => {
+	window.history.back();
+});
+
 const renderEditModal = () => {
 	editCourseName.value = course.name;
 	editCourseDescription.value = course.description;

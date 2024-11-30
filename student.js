@@ -48,6 +48,10 @@ deleteStudentBtn.addEventListener("click", () => {
 	}
 });
 
+document.getElementById("goBackBtn").addEventListener("click", () => {
+	window.history.back();
+});
+
 const renderStudentProfile = () => {
 	studentName.textContent = student.name;
 	studentID.textContent = student.id;

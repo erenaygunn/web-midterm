@@ -188,6 +188,10 @@ searchBar.addEventListener("input", (e) => {
 	renderStudents(filteredStudents);
 });
 
+document.getElementById("goBackBtn").addEventListener("click", () => {
+	window.history.back();
+});
+
 // Initialize
 renderCourses();
 renderStudents();

@@ -462,3 +462,21 @@ td:nth-child(6) {
 #toggleCourseStatsBtn:hover {
 	background-color: #6f8a9b;
 }
+
+.go-back-btn {
+	background-color: #89a8b2;
+	color: #f1f0e8;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 20px;
+}
+
+.go-back-btn:hover {
+	background-color: #6f8a9b;
+}
