@@ -326,3 +326,39 @@ h1 {
 #studentFinal {
 	display: none;
 }
+
+.delete-btn {
+	background-color: #ff4c4c;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+	background-color: #ff1a1a;
+}
+
+.modal ul li button,
+.buttons button.delete-btn {
+	background-color: #ff4c4c;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.modal ul li button:hover,
+.buttons button.delete-btn:hover {
+	background-color: #ff1a1a;
+}
+
+.highlight {
+	font-weight: bold;
+	color: #89a8b2;
+	font-size: 1.2em;
+}

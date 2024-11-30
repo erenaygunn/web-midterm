@@ -15,16 +15,43 @@
 	<body>
 		<header>
 			<h1 id="studentName">Student Name</h1>
-			<button id="deleteStudentBtn">Delete Student</button>
+			<p>
+				ID:
+				<span
+					id="studentID"
+					class="highlight"
+				></span>
+			</p>
+			<p>
+				GPA:
+				<span
+					id="studentGPA"
+					class="highlight"
+				></span>
+			</p>
+			<button
+				id="deleteStudentBtn"
+				class="delete-btn"
+			>
+				Delete Student
+			</button>
 		</header>
 		<main>
 			<section id="studentDetails">
-				<p>ID: <span id="studentID"></span></p>
-				<p>GPA: <span id="studentGPA"></span></p>
 				<h3>Courses</h3>
-				<ul id="studentCourses">
-					<!-- Courses will be rendered here -->
-				</ul>
+				<table id="studentCoursesTable">
+					<thead>
+						<tr>
+							<th>Course Name</th>
+							<th>Midterm</th>
+							<th>Final</th>
+							<th>Grade</th>
+						</tr>
+					</thead>
+					<tbody id="studentCourses">
+						<!-- Courses will be rendered here -->
+					</tbody>
+				</table>
 			</section>
 		</main>
 		<script src="student.js"></script>

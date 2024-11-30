@@ -17,10 +17,24 @@ const calculateGPA = (student) => {
 	const grades = student.courses.map((courseId) => {
 		const course = data.courses.find((c) => c.id === courseId);
 		const studentCourse = course.students.find((s) => s.id === student.id);
-		return (studentCourse.midterm * 0.4 + studentCourse.final * 0.6).toFixed(2);
+		const grade = studentCourse.midterm * 0.4 + studentCourse.final * 0.6;
+		if (grade >= 90) return 4.0;
+		if (grade >= 80) return 3.0;
+		if (grade >= 70) return 2.0;
+		if (grade >= 60) return 1.0;
+		return 0.0;
 	});
-	const total = grades.reduce((acc, grade) => acc + parseFloat(grade), 0);
+	const total = grades.reduce((acc, grade) => acc + grade, 0);
 	return (total / grades.length).toFixed(2);
+};
+
+const calculateLetterGrade = (midterm, final) => {
+	const grade = midterm * 0.4 + final * 0.6;
+	if (grade >= 90) return "A";
+	if (grade >= 80) return "B";
+	if (grade >= 70) return "C";
+	if (grade >= 60) return "D";
+	return "F";
 };
 
 deleteStudentBtn.addEventListener("click", () => {
@@ -42,7 +56,18 @@ const renderStudentProfile = () => {
 		.map((courseId) => {
 			const course = data.courses.find((c) => c.id === courseId);
 			const studentCourse = course.students.find((s) => s.id === student.id);
-			return `<li>${course.name} - Midterm: ${studentCourse.midterm}, Final: ${studentCourse.final}</li>`;
+			const letterGrade = calculateLetterGrade(
+				studentCourse.midterm,
+				studentCourse.final
+			);
+			return `
+				<tr>
+					<td>${course.name}</td>
+					<td>${studentCourse.midterm}</td>
+					<td>${studentCourse.final}</td>
+					<td>${letterGrade}</td>
+				</tr>
+			`;
 		})
 		.join("");
 };
